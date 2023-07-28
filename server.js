@@ -1,11 +1,8 @@
 const mongoose = require('mongoose');
 const app = require('./app');
-// 4vefkgQgvBxfK7r kapusta mongo db
-const DB_HOST =
-  'mongodb+srv://Dmitriy:4vefkgQgvBxfK7r@cluster0.xnqw9cd.mongodb.net/kapusta_wallet?retryWrites=true&w=majority';
 
-// const { DB_HOST } = process.env;
-
+const { DB_HOST } = process.env;
+mongoose.set('strictQuery', true);
 mongoose
   .connect(DB_HOST)
   .then(() => {
